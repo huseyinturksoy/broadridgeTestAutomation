@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json"
         },
         features = "src/test/resources/features",
-        glue = "com/shimano/step_defs",
+        glue = "com/broadridge/step_defs",
         dryRun = false,
         tags = "@smoke"
         //publish = true

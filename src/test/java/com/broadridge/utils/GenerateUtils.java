@@ -26,6 +26,16 @@ public class GenerateUtils {
         return randomFirstName;
     }
 
+    public static String generateLastName() {
+        String lastName = faker.name().lastName();
+        return lastName;
+    }
+
+    public static String generateEmail() {
+        String email = faker.internet().emailAddress();
+        return email;
+    }
+
     public static String generateRandom5char() {
         String randomString = faker.regexify("[a-zA-Z0-9]{5}");
         return randomString;

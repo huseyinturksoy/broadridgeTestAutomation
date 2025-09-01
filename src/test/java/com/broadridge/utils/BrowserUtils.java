@@ -69,7 +69,6 @@ public class BrowserUtils {
 
     /**
      * accepts WebElement as parameter, waits for visibility of given WebElement
-     * @param element
      */
     public static void waitForVisible(WebElement element){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);

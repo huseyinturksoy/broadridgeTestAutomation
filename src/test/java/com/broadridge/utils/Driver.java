@@ -28,7 +28,7 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
-                    driver.manage().window().setSize(new Dimension(1920,1080));
+                    //driver.manage().window().setSize(new Dimension(1290,790));
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "safari":

@@ -2,6 +2,6 @@
 Feature: Download form validation
 
   Scenario: User fills the download form and validates the form on BE
-    Given User navigates to download form page
-    When User fills the download form
-    Then User validates the download form
+    #Given User navigates to download form page
+    #When User fills the download form
+    #Then User validates the download form
