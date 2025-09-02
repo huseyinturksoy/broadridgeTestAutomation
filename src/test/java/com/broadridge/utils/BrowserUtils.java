@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
@@ -71,7 +72,7 @@ public class BrowserUtils {
      * accepts WebElement as parameter, waits for visibility of given WebElement
      */
     public static void waitForVisible(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofMillis(2000));
         //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.visibilityOf(element));
         //System.out.println(elementName + "Element is successfully displayed");
@@ -80,7 +81,7 @@ public class BrowserUtils {
     public static void waitForVisible(By byElement){
 
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMinutes(2000));
             //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
             wait.until(ExpectedConditions.visibilityOfElementLocated(byElement));
             System.out.println("Element is displayed successfully on page");
@@ -91,7 +92,7 @@ public class BrowserUtils {
 
     public static void waitForInvisibility(By byElement){
         try{
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 100);
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofMinutes(2000));
             //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
             wait.until(ExpectedConditions.invisibilityOfElementLocated(byElement));
             System.out.println("The element is removed successfully from page");
@@ -107,13 +108,13 @@ public class BrowserUtils {
      * @param element
      */
     public static void waitForClickable(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
         //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static void waitForClickable(By element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
         //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -126,14 +127,14 @@ public class BrowserUtils {
      * @param title
      */
     public static void waitForTitle(String title){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
         //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.titleIs(title));
         Assert.assertEquals(Driver.getDriver().getTitle(),title);
     }
 
     public static void waitForTitleToContain(String title){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
         //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.titleContains(title));
         Assert.assertTrue(Driver.getDriver().getTitle().contains(title));
@@ -141,7 +142,7 @@ public class BrowserUtils {
 
 
     public static void waitForUrlToContain(String string){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
         //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.urlContains(string));
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(string));
@@ -171,7 +172,7 @@ public class BrowserUtils {
     public static void waitAttributeNotEmpty(WebElement element, String attribute){
 
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
             //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
             wait.until(ExpectedConditions.attributeToBeNotEmpty(element,attribute));
             System.out.println("Element is displayed successfully on page");
@@ -183,7 +184,7 @@ public class BrowserUtils {
     public static void waitPresenceOfElement(By byElement){
 
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(),25);
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofMillis(2500));
             wait.until(ExpectedConditions.presenceOfElementLocated(byElement));
             System.out.println("Element is displayed successfully on page");
         } catch (Exception e) {

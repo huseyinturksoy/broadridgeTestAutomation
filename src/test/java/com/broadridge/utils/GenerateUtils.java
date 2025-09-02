@@ -52,7 +52,7 @@ public class GenerateUtils {
     }
 
     public static String generateMessage() {
-        String message = faker.lorem().sentence();
+        String message = faker.lorem().characters(50);
         return message;
     }
 
