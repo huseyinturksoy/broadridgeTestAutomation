@@ -68,7 +68,41 @@ public class ContactUsStepDef {
     @When("User fills the contact us form")
     public void userFillsTheContactUsForm() {
         String firstName = GenerateUtils.generateShortName();
-        String lastName = GenerateUtils.generateShortName();
+        System.out.println("firstName = " + firstName);
+        String lastName = GenerateUtils.generateLastName();
+        System.out.println("lastName = " + lastName);
+        String email = GenerateUtils.generateEmail();
+        System.out.println("email = " + email);
+        String phone = GenerateUtils.generatePhoneNumber();
+        System.out.println("phone = " + phone);
+        String jobTitle = GenerateUtils.generateJobTitle();
+        System.out.println("jobTitle = " + jobTitle);
+        String companyName = GenerateUtils.generateCompanyName();
+        System.out.println("companyName = " + companyName);
+        String message = GenerateUtils.generateMessage();
+        System.out.println("message = " + message);
+
+        contactPage.firstName.sendKeys(firstName);
+        contactPage.lastName.sendKeys(lastName);
+        contactPage.email.sendKeys(email);
+        contactPage.phone.sendKeys(phone);
+        contactPage.jobTitle.sendKeys(jobTitle);
+        contactPage.companyName.sendKeys(companyName);
+        contactPage.countrySelectorButton.click();
+        contactPage.unitedStatesOption.click();
+        contactPage.message.sendKeys(message);
+        BrowserUtils.click(contactPage.submitButton);
+
+        if (contactPage.thankyouMessage.isDisplayed()) {
+            System.out.println("Thank you message is displayed");
+        }else if (contactPage.errorMessage.isDisplayed()) {
+            System.out.println("Error message is displayed");
+
+        }else {
+            System.err.println("Different error has occurred. Please check the report");
+        }
+
+        Assert.assertTrue(contactPage.thankyouMessage.isDisplayed());
 
 
     }
