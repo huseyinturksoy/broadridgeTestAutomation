@@ -15,6 +15,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v134.network.model.Request;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -113,5 +114,12 @@ public class ContactUsStepDef {
 
     @Then("User validates the contact us form")
     public void userValidatesTheContactUsForm() {
+        String formURL = Driver.req.getUrl();
+        System.out.println("formURL = " + formURL);
+        String formPayload= Driver.req.getPostData().orElse("No payload").toString();
+        System.out.println("formPayload = " + formPayload);
+
+
+
     }
 }

@@ -22,6 +22,8 @@ public class Driver {
     private static WebDriver driver;
     public static DevTools devTools;
 
+    public static Request req ;
+
     //sets the driver object
     public static WebDriver getDriver(){
         if (driver == null){
@@ -43,10 +45,13 @@ public class Driver {
 
                     // Listener ekle
                     devTools.addListener(Network.requestWillBeSent(), request -> {
-                        Request req = request.getRequest();
+                        req = request.getRequest();
+                        //https://www.broadridge.com/api/form-processor
+                        //https://www-dev.broadridge.com/api/form-processor
                         if (req.getUrl().equals("https://www-dev.broadridge.com/api/form-processor")) {
                             System.out.println("URL: " + req.getUrl());
                             System.out.println("Method: " + req.getMethod());
+                            //System.out.println("statuscode = " + req.getResponse().getStatus());
                             System.out.println("Payload: " + req.getPostData().orElse("No payload"));
                         }
                     });
