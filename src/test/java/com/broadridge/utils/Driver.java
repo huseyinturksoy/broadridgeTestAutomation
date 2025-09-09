@@ -17,12 +17,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    private Driver(){}
 
     private static WebDriver driver;
     public static DevTools devTools;
 
-    public static Request req ;
+    public static Request req;
+
+    public static String formurl ;
+    public static String formmethod;
+    public static String formpayload;
 
     //sets the driver object
     public static WebDriver getDriver(){
@@ -49,10 +52,9 @@ public class Driver {
                         //https://www.broadridge.com/api/form-processor
                         //https://www-dev.broadridge.com/api/form-processor
                         if (req.getUrl().equals("https://www-dev.broadridge.com/api/form-processor")) {
-                            System.out.println("URL: " + req.getUrl());
-                            System.out.println("Method: " + req.getMethod());
-                            //System.out.println("statuscode = " + req.getResponse().getStatus());
-                            System.out.println("Payload: " + req.getPostData().orElse("No payload"));
+                            formurl = req.getUrl();
+                            formpayload = req.getPostData().orElse("No Payload");
+                            //System.out.println("form payload = " + formpayload);
                         }
                     });
 

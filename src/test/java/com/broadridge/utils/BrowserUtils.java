@@ -1,5 +1,8 @@
 package com.broadridge.utils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -201,6 +204,18 @@ public class BrowserUtils {
         int randomIndex = random.nextInt(list.size());
 
         return list.get(randomIndex);
+    }
+
+    public static String getJsonField(String payload, String fieldName) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = mapper.readTree(payload);
+
+        String jsonData = root.path(fieldName).asText();
+
+        System.out.println(fieldName+" = " + jsonData);
+
+
+        return jsonData;
     }
 
 }

@@ -5,9 +5,11 @@ import com.broadridge.utils.BrowserUtils;
 import com.broadridge.utils.ConfigurationReader;
 import com.broadridge.utils.Driver;
 import com.broadridge.utils.GenerateUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -30,7 +32,7 @@ public class ContactUsStepDef {
     private ContactUsPage contactPage = new ContactUsPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofMillis(2000));
 
-    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
 
 
     @Given("User navigates to contact us form page")
@@ -99,7 +101,7 @@ public class ContactUsStepDef {
         contactPage.countrySelectorButton.click();
         contactPage.unitedStatesOption.click();
         contactPage.message.sendKeys(message);
-        BrowserUtils.click(contactPage.submitButton);
+        contactPage.submitButton.click();
 
         try {
             System.out.println("Form Submission Message = " + contactPage.thankyouMessage.getText());
@@ -107,19 +109,40 @@ public class ContactUsStepDef {
             System.out.println("Form Submission Message = " + contactPage.errorMessage.getText());
         }
 
-
-
-
     }
 
     @Then("User validates the contact us form")
-    public void userValidatesTheContactUsForm() {
-        String formURL = Driver.req.getUrl();
-        System.out.println("formURL = " + formURL);
-        String formPayload= Driver.req.getPostData().orElse("No payload").toString();
-        System.out.println("formPayload = " + formPayload);
+    public void userValidatesTheContactUsForm() throws JsonProcessingException {
+
+        String formpayload = Driver.formpayload;
+        System.out.println("formpayload for validation = " + formpayload);
+
+        String formSubmissionId = BrowserUtils.getJsonField(formpayload, "formSubmissionId");
+        String fullURL = BrowserUtils.getJsonField(formpayload, "fullURL");
+
+        System.out.println("formSubmissionId = " + formSubmissionId);
+        System.out.println("fullURL = " + fullURL);
+
+        Assert.assertTrue(formSubmissionId != null);
+        Assert.assertEquals(fullURL,Driver.getDriver().getCurrentUrl());
 
 
 
     }
+
+    @AfterClass
+    public void tearDown(){
+
+        //if scenario fails, it takes screenshot
+        /**
+         if (scenario.isFailed()){
+         byte[] screenshot = ( (TakesScreenshot) Driver.getDriver() ).getScreenshotAs(OutputType.BYTES);
+         scenario.attach(screenshot, "image/png", scenario.getName());
+         } */
+
+        //for closing the browser
+        Driver.closeDriver();
+    }
+
+
 }
