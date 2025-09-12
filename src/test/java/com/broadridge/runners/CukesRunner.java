@@ -9,14 +9,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "html:target/cucumber-reports.html",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                //"me.jvt.cucumber.report.PrettyReports:target/cucumber",
                 "rerun:target/rerun.txt",
                 "json:target/cucumber.json"
         },
         features = "src/test/resources/features",
-        glue = "com/shimano/step_defs",
+        glue = "com/broadridge/step_defs",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@download"
         //publish = true
 
 )

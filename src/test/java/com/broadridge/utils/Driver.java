@@ -5,17 +5,27 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v134.network.Network;
+import org.openqa.selenium.devtools.v134.network.model.Request;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    private Driver(){}
 
     private static WebDriver driver;
+    public static DevTools devTools;
+
+    public static Request req;
+
+    public static String formurl ;
+    public static String formmethod;
+    public static String formpayload;
 
     //sets the driver object
     public static WebDriver getDriver(){
@@ -26,9 +36,30 @@ public class Driver {
 
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+
+                    ChromeDriver chromeDriver = new ChromeDriver();
+                    driver = chromeDriver;
+
+
+// DevTools başlat
+                    devTools = chromeDriver.getDevTools();
+                    devTools.createSession();
+                    devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+                    // Listener ekle
+                    devTools.addListener(Network.requestWillBeSent(), request -> {
+                        req = request.getRequest();
+                        //https://www.broadridge.com/api/form-processor
+                        //https://www-dev.broadridge.com/api/form-processor
+                        if (req.getUrl().equals("https://www-dev.broadridge.com/api/form-processor")) {
+                            formurl = req.getUrl();
+                            formpayload = req.getPostData().orElse("No Payload");
+                            //System.out.println("form payload = " + formpayload);
+                        }
+                    });
+
                     driver.manage().window().maximize();
-                    driver.manage().window().setSize(new Dimension(1920,1080));
+                    //driver.manage().window().setSize(new Dimension(1290,790));
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "safari":
@@ -45,7 +76,7 @@ public class Driver {
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                    //driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;

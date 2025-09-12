@@ -26,6 +26,36 @@ public class GenerateUtils {
         return randomFirstName;
     }
 
+    public static String generateLastName() {
+        String lastName = faker.name().lastName();
+        return lastName;
+    }
+
+    public static String generateEmail() {
+        String email = faker.internet().emailAddress();
+        return email;
+    }
+
+    public static String generatePhoneNumber() {
+        String phoneNumber = faker.phoneNumber().cellPhone();
+        return phoneNumber;
+    }
+
+    public static String generateJobTitle() {
+        String jobTitle = faker.job().title();
+        return jobTitle;
+    }
+
+    public static String generateCompanyName() {
+        String companyName = faker.company().name();
+        return companyName;
+    }
+
+    public static String generateMessage() {
+        String message = faker.lorem().characters(50);
+        return message;
+    }
+
     public static String generateRandom5char() {
         String randomString = faker.regexify("[a-zA-Z0-9]{5}");
         return randomString;

@@ -15,52 +15,67 @@
     </properties>
 
     <dependencies>
+        <!-- ✅ Selenium 4 (DevTools desteği ile birlikte) -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.32.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v134</artifactId>
+            <version>4.32.0</version>
+        </dependency>
+
+        <!-- ✅ WebDriverManager (driver otomatik indirme) -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.6.4</version>
+            <version>5.8.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <!-- ✅ Cucumber Java -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.2.0</version>
+            <version>7.18.0</version>
         </dependency>
 
-        <!--https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-->
+        <!-- ✅ Cucumber JUnit -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.2.0</version>
+            <version>7.18.0</version>
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>me.jvt.cucumber</groupId>
-            <artifactId>reporting-plugin</artifactId>
-            <version>7.2.0</version>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v134 -->
 
+
+        <!-- ✅ Cucumber Reporting -->
+
+
+        <!-- ✅ Faker (fake data generation) -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
 
+        <!-- ✅ (Opsiyonel) AssertJ: daha okunabilir assertionlar için -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.26.0</version>
+            <scope>test</scope>
+        </dependency>
 
-
-
-
-
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.0</version>
+        </dependency>
 
     </dependencies>
-
 </project>
