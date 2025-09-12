@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/broadridge/step_defs",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@download"
         //publish = true
 
 )

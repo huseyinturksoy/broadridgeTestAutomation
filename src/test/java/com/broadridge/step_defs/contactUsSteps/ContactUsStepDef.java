@@ -130,19 +130,6 @@ public class ContactUsStepDef {
 
     }
 
-    @AfterClass
-    public void tearDown(){
-
-        //if scenario fails, it takes screenshot
-        /**
-         if (scenario.isFailed()){
-         byte[] screenshot = ( (TakesScreenshot) Driver.getDriver() ).getScreenshotAs(OutputType.BYTES);
-         scenario.attach(screenshot, "image/png", scenario.getName());
-         } */
-
-        //for closing the browser
-        Driver.closeDriver();
-    }
 
 
 }
