@@ -22,6 +22,8 @@ public class DownloadFormStepDef {
     private DownloadFormPage downloadFormPage = new DownloadFormPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofMillis(2000));
 
+    Actions action =new Actions(Driver.getDriver());
+
     @Given("User navigates to download form page")
     public void userNavigatesToDownloadFormPage() throws InterruptedException {
         Driver.getDriver().get(ConfigurationReader.getProperty("downloadformUrl"));
@@ -48,7 +50,7 @@ public class DownloadFormStepDef {
         WebElement firstnameInput = Driver.getDriver().findElement(By.xpath("(//input[@placeholder='First name'])[2]"));
         //= By.xpath("(//input[@placeholder='First name'])[2]");
 
-        Actions action =new Actions(Driver.getDriver());
+
         action.moveToElement(firstnameInput).perform();
         //js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 
@@ -71,11 +73,12 @@ public class DownloadFormStepDef {
         Thread.sleep(2000);
         System.out.println("---------------waited 2 seconds --------------");
         try {
+            System.out.println("phone field = " + downloadFormPage.phone.isDisplayed());
             downloadFormPage.phone.sendKeys("999-999-9999");
             System.out.println("---------------phone field is filled --------------");
         } catch (Exception e) {
             BrowserUtils.click(downloadFormPage.phone);
-            downloadFormPage.phone.sendKeys("999-999-9999");
+            action.sendKeys("999-999-9999").perform();
 
             System.out.println("---------------extra field is forced to fill --------------");
         }

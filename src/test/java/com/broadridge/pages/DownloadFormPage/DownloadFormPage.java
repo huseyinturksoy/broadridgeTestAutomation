@@ -24,7 +24,7 @@ public class DownloadFormPage {
     @FindBy(xpath = "(//input[@placeholder='Your company name'])[2]")
     public WebElement companyName;
 
-    @FindBy(xpath = "//div[@class='download-form__form-item download-form__additional col-span-2']")
+    @FindBy(xpath = "//input[@id='toggle-additional-fields']")
     public WebElement checkBoxForExtraField;
 
     @FindBy(xpath = "(//input[@id='phone_business'])")
