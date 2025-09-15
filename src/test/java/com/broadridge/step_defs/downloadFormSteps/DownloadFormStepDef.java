@@ -60,13 +60,14 @@ public class DownloadFormStepDef {
     }
 
     @When("User fills the download form")
-    public void userFillsTheDownloadForm() {
+    public void userFillsTheDownloadForm() throws InterruptedException {
         downloadFormPage.firstName.sendKeys("First_TESTTEST");
         downloadFormPage.lastName.sendKeys("Last_TESTTEST");
         downloadFormPage.email.sendKeys("automated_TESTTEST@broadridge.com");
         downloadFormPage.companyName.sendKeys("Company_TESTTEST");
         //downloadFormPage.checkBoxForExtraField.click();
         BrowserUtils.click(downloadFormPage.checkBoxForExtraField);
+        Thread.sleep(2000);
         downloadFormPage.phone.sendKeys("999-999-9999");
         downloadFormPage.jobTitle.sendKeys("Job_TESTTEST");
         //downloadFormPage.countrySelectorButton.click();
@@ -76,6 +77,8 @@ public class DownloadFormStepDef {
         downloadFormPage.message.sendKeys("This is an automated test submission.  Please ignore.");
         //downloadFormPage.submitButton.click();
         BrowserUtils.click(downloadFormPage.submitButton);
+
+        System.out.println("---------------Download form button clicked --------------");
 
         try {
             System.out.println("Form Submission Message = " + downloadFormPage.thankyouMessage.getText());

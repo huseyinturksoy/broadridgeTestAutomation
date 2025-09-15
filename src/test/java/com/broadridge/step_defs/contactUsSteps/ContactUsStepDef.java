@@ -109,6 +109,8 @@ public class ContactUsStepDef {
         //contactPage.submitButton.click();
         BrowserUtils.click(contactPage.submitButton);
 
+        System.out.println("---------------Contact us button clicked --------------");
+
         try {
             System.out.println("Form Submission Message = " + contactPage.thankyouMessage.getText());
         } catch (Exception e) {
