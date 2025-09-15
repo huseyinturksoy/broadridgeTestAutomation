@@ -70,7 +70,16 @@ public class DownloadFormStepDef {
         System.out.println("---------------checkbox is clicked for extra field --------------");
         Thread.sleep(2000);
         System.out.println("---------------waited 2 seconds --------------");
-        downloadFormPage.phone.sendKeys("999-999-9999");
+        try {
+            downloadFormPage.phone.sendKeys("999-999-9999");
+            System.out.println("---------------phone field is filled --------------");
+        } catch (Exception e) {
+            BrowserUtils.click(downloadFormPage.phone);
+            downloadFormPage.phone.sendKeys("999-999-9999");
+
+            System.out.println("---------------extra field is forced to fill --------------");
+        }
+        //downloadFormPage.phone.sendKeys("999-999-9999");
         System.out.println("---------------telephone field is filled --------------");
         downloadFormPage.jobTitle.sendKeys("Job_TESTTEST");
         //downloadFormPage.countrySelectorButton.click();
