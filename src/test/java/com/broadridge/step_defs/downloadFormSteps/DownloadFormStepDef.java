@@ -65,13 +65,17 @@ public class DownloadFormStepDef {
         downloadFormPage.lastName.sendKeys("Last_TESTTEST");
         downloadFormPage.email.sendKeys("automated_TESTTEST@broadridge.com");
         downloadFormPage.companyName.sendKeys("Company_TESTTEST");
-        downloadFormPage.checkBoxForExtraField.click();
+        //downloadFormPage.checkBoxForExtraField.click();
+        BrowserUtils.click(downloadFormPage.checkBoxForExtraField);
         downloadFormPage.phone.sendKeys("999-999-9999");
         downloadFormPage.jobTitle.sendKeys("Job_TESTTEST");
-        downloadFormPage.countrySelectorButton.click();
-        downloadFormPage.unitedStatesOption.click();
+        //downloadFormPage.countrySelectorButton.click();
+        BrowserUtils.click(downloadFormPage.countrySelectorButton);
+        //downloadFormPage.unitedStatesOption.click();
+        BrowserUtils.click(downloadFormPage.unitedStatesOption);
         downloadFormPage.message.sendKeys("This is an automated test submission.  Please ignore.");
-        downloadFormPage.submitButton.click();
+        //downloadFormPage.submitButton.click();
+        BrowserUtils.click(downloadFormPage.submitButton);
 
         try {
             System.out.println("Form Submission Message = " + downloadFormPage.thankyouMessage.getText());

@@ -101,10 +101,13 @@ public class ContactUsStepDef {
         contactPage.phone.sendKeys(phone);
         contactPage.jobTitle.sendKeys(jobTitle);
         contactPage.companyName.sendKeys(companyName);
-        contactPage.countrySelectorButton.click();
-        contactPage.unitedStatesOption.click();
+        //contactPage.countrySelectorButton.click();
+        BrowserUtils.click(contactPage.countrySelectorButton);
+        //contactPage.unitedStatesOption.click();
+        BrowserUtils.click(contactPage.unitedStatesOption);
         contactPage.message.sendKeys(message);
-        contactPage.submitButton.click();
+        //contactPage.submitButton.click();
+        BrowserUtils.click(contactPage.submitButton);
 
         try {
             System.out.println("Form Submission Message = " + contactPage.thankyouMessage.getText());
