@@ -67,8 +67,11 @@ public class DownloadFormStepDef {
         downloadFormPage.companyName.sendKeys("Company_TESTTEST");
         //downloadFormPage.checkBoxForExtraField.click();
         BrowserUtils.click(downloadFormPage.checkBoxForExtraField);
+        System.out.println("---------------checkbox is clicked for extra field --------------");
         Thread.sleep(2000);
+        System.out.println("---------------waited 2 seconds --------------");
         downloadFormPage.phone.sendKeys("999-999-9999");
+        System.out.println("---------------telephone field is filled --------------");
         downloadFormPage.jobTitle.sendKeys("Job_TESTTEST");
         //downloadFormPage.countrySelectorButton.click();
         BrowserUtils.click(downloadFormPage.countrySelectorButton);
