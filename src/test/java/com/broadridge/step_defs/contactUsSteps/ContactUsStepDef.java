@@ -47,7 +47,8 @@ public class ContactUsStepDef {
             WebElement acceptBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.id("onetrust-accept-btn-handler")
             ));
-            acceptBtn.click();
+            //acceptBtn.click();
+            BrowserUtils.click(acceptBtn);
 
 
             //js.executeScript("arguments[0].click();", contactPage.acceptCookiesButton);
@@ -69,6 +70,8 @@ public class ContactUsStepDef {
 
 
         Assert.assertTrue(firstnameInput.isDisplayed());
+
+        System.out.println("---------------Navigated to contact us form --------------");
 
     }
 
