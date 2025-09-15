@@ -55,6 +55,8 @@ public class DownloadFormStepDef {
 
         Assert.assertTrue(firstnameInput.isDisplayed());
 
+        System.out.println("---------------Navigated to download form --------------");
+
     }
 
     @When("User fills the download form")
