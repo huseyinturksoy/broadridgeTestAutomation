@@ -6,6 +6,9 @@ on:
     - cron:  '30 5 * * 1'
   workflow_dispatch: #allows manuel triggering  
 
+permissions:
+  contents: write   # 👈 required for gh-pages deployment  
+
 jobs:
   test:
     runs-on: ubuntu-latest
