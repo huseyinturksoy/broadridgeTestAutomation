@@ -8,6 +8,22 @@
     <artifactId>broadridge-testautomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <build>
+        <plugins>
+            <!-- Surefire plugin goes here -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <includes>
+                        <include>**/CukesRunner.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
@@ -39,21 +55,25 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.18.0</version>
+            <version>7.2.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- ✅ Cucumber JUnit -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.18.0</version>
+            <version>7.2.0</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v134 -->
+        <dependency>
+            <groupId>me.jvt.cucumber</groupId>
+            <artifactId>reporting-plugin</artifactId>
+            <version>7.2.0</version>
+        </dependency>
 
 
-        <!-- ✅ Cucumber Reporting -->
 
 
         <!-- ✅ Faker (fake data generation) -->
@@ -70,6 +90,8 @@
             <version>3.26.0</version>
             <scope>test</scope>
         </dependency>
+
+
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
