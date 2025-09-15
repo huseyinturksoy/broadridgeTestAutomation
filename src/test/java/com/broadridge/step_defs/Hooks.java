@@ -17,7 +17,12 @@ public class Hooks {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown(Scenario scenario){
+
+        if (scenario.isFailed()){
+            byte[] screenshot = ( (TakesScreenshot) Driver.getDriver() ).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
 
         //if scenario fails, it takes screenshot
         System.err.println("------------------- END BROWSER -------------------");
