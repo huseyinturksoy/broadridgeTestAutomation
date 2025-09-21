@@ -38,4 +38,36 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target
 
-      
+      #5. collecting the failures
+      - name: Collect failures
+        if: always()
+        id: failures
+        run: |
+         if [ -s target/rerun.txt ]; then
+           echo "report<<EOF" >> $GITHUB_OUTPUT
+           cat target/rerun.txt >> $GITHUB_OUTPUT
+           echo "EOF" >> $GITHUB_OUTPUT
+         else
+          echo "report=✅ All tests passed" >> $GITHUB_OUTPUT
+         fi
+
+       # 6. Send email if tests failed
+      - name: Send email if tests failed
+        if: failure() # Runs only if any previous step failed
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "🚨 Test Failure in Broadridge Forms"
+          to: huseyin.turksoy@nmqdigital.com # ${{ secrets.CLIENT_EMAILS }}
+          from: ${{ secrets.SMTP_USERNAME }}
+          content_type: text/html
+          body: |
+            <h2>Some tests have failed</h2>
+            <p>  ${{ steps.failures.outputs.report }}   </p>
+            <p>📑 <a href="https://huseyinturksoy.github.io/broadridgeTestAutomation/">View Full Report</a></p>
+                
+
+         
