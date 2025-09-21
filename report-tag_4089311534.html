@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>21 Sep 2025, 21:37</td>
+      <td>21 Sep 2025, 21:58</td>
     </tr>
   </tbody>
 </table>
@@ -127,9 +127,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@smoke</td>
-          <td      class="passed"    >5</td>
+          <td      class="passed"    >3</td>
           <td      class="failed"    >3</td>
-          <td     class="skipped"   >1</td>
+          <td     class="skipped"   >3</td>
           <td >0</td>
           <td >0</td>
           <td class="total">9</td>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >3</td>
           <td class="total">3</td>
 
-          <td class="duration" data-value="59224894034">59.224</td>
+          <td class="duration" data-value="72724534477">1:12.724</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -182,7 +182,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">15.911</span>
+  <span class="lead-duration duration">29.740</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -225,7 +225,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User navigates to contact us form page</span>
 
-  <span class="lead-duration duration">13.597</span>
+  <span class="lead-duration duration">14.046</span>
 
 </div>
 
@@ -284,7 +284,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">User fills the contact us form</span>
 
-  <span class="lead-duration duration">2.313</span>
+  <span class="lead-duration duration">15.694</span>
 
 </div>
 
@@ -328,35 +328,12 @@ $(document).ready(function() {
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-5">
-          <a>org.openqa.selenium.ElementClickInterceptedException:</a>
+          <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-5" class="collapse collapsable-details ">
-        <pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (876, 976)
-  (Session info: chrome=140.0.7339.80)
-Build info: version: '4.32.0', revision: 'd17c8aa950'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '20.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9b469e24be0d0464c71e4f1deeca9608, clickElement {id=f.0DF27055085F3AED86C60617C9AB371B.d.849966FE7E558F58B900AEB5CFDB02ED.e.80}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37393}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37393/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (9b469e24be0d0464c71e4f1deeca9608)] -&gt; xpath: //button[@aria-labelledby='country-combobox-value-1']]
-Session ID: 9b469e24be0d0464c71e4f1deeca9608
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy23.click(Unknown Source)
-	at com.broadridge.step_defs.contactUsSteps.ContactUsStepDef.userFillsTheContactUsForm(ContactUsStepDef.java:89)
+        <pre>java.lang.AssertionError: Form Submission Message = Something went wrong with our form submission. Please try again.
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.broadridge.step_defs.contactUsSteps.ContactUsStepDef.userFillsTheContactUsForm(ContactUsStepDef.java:100)
 	at &#10045;.User fills the contact us form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/contactUs.feature:7)
 </pre>
       </div>
@@ -458,7 +435,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
             <span class="keyword indention">After</span>
               <span class="location name">com.broadridge.step_defs.Hooks.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.168</span>
+  <span class="lead-duration duration">0.164</span>
 
           </div>
 
@@ -471,13 +448,13 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-8" class="collapsable-control">
       <a>User fills the contact us form and validates the form on BE</a>
-      <a href="embeddings/embedding_-1132894838.png" download target="_blank">
+      <a href="embeddings/embedding_236240317.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-8" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-1132894838.png">
+        <img src="embeddings/embedding_236240317.png">
       </div>
     </div>
   </div>
@@ -505,7 +482,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
 </div>
 
 
-  <span class="lead-duration duration">23.981</span>
+  <span class="lead-duration duration">24.315</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-9">
@@ -548,7 +525,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
   <span class="keyword indention">Given</span>
   <span class="name">User navigates to download form page</span>
 
-  <span class="lead-duration duration">5.330</span>
+  <span class="lead-duration duration">5.733</span>
 
 </div>
 
@@ -603,11 +580,11 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
   <span class="name">User fills the download form</span>
 
-  <span class="lead-duration duration">18.549</span>
+  <span class="lead-duration duration">18.581</span>
 
 </div>
 
@@ -648,6 +625,21 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
 
 
 
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-13">
+          <a>java.lang.AssertionError:</a>
+      </div>
+      <div id="msg-13" class="collapse collapsable-details ">
+        <pre>java.lang.AssertionError: Form Submission Message = Something went wrong with our form submission. Please try again.
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.broadridge.step_defs.downloadFormSteps.DownloadFormStepDef.userFillsTheDownloadForm(DownloadFormStepDef.java:102)
+	at &#10045;.User fills the download form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/downloadForm.feature:7)
+</pre>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -662,20 +654,20 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">User validates the download form</span>
 
-  <span class="lead-duration duration">0.102</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
 
 
   <div class="inner-level hooks-step-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-13">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-14">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -685,9 +677,9 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
 
     </div>
 
-    <div id="before-13" class="inner-level collapse collapsable-details ">
+    <div id="before-14" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief skipped">
             <span class="keyword indention">Before</span>
               <span class="location name">com.broadridge.step_defs.Hooks.horizontalLineStart()</span>
 
@@ -706,22 +698,6 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
   </div>
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-14">
-          <a>org.junit.ComparisonFailure:</a>
-      </div>
-      <div id="msg-14" class="collapse collapsable-details ">
-        <pre>org.junit.ComparisonFailure: expected:&lt;https://[]www-dev.broadridge.c...&gt; but was:&lt;https://[broadridgedigital:broadridge1@]www-dev.broadridge.c...&gt;
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at com.broadridge.step_defs.downloadFormSteps.DownloadFormStepDef.userValidatesTheDownloadForm(DownloadFormStepDef.java:120)
-	at &#10045;.User validates the download form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/downloadForm.feature:8)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -759,7 +735,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
             <span class="keyword indention">After</span>
               <span class="location name">com.broadridge.step_defs.Hooks.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.146</span>
+  <span class="lead-duration duration">0.137</span>
 
           </div>
 
@@ -806,7 +782,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
 </div>
 
 
-  <span class="lead-duration duration">19.331</span>
+  <span class="lead-duration duration">18.668</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-17">
@@ -849,7 +825,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
   <span class="keyword indention">Given</span>
   <span class="name">User navigates header contact us form</span>
 
-  <span class="lead-duration duration">6.777</span>
+  <span class="lead-duration duration">6.008</span>
 
 </div>
 
@@ -904,11 +880,11 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
   <span class="name">User fills the header contact us form</span>
 
-  <span class="lead-duration duration">12.548</span>
+  <span class="lead-duration duration">12.660</span>
 
 </div>
 
@@ -949,6 +925,21 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
 
 
 
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-21">
+          <a>java.lang.AssertionError:</a>
+      </div>
+      <div id="msg-21" class="collapse collapsable-details ">
+        <pre>java.lang.AssertionError: Form Submission Message = Something went wrong with our form submission. Please try again.
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.broadridge.step_defs.HeaderContactFromStepDefs.userFillsTheHeaderContactUsForm(HeaderContactFromStepDefs.java:80)
+	at &#10045;.User fills the header contact us form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/headerContactForm.feature:7)
+</pre>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -963,20 +954,20 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">User validates the header contact us form</span>
 
-  <span class="lead-duration duration">0.005</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
 
 
   <div class="inner-level hooks-step-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-21">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-22">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -986,9 +977,9 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
 
     </div>
 
-    <div id="before-21" class="inner-level collapse collapsable-details ">
+    <div id="before-22" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief skipped">
             <span class="keyword indention">Before</span>
               <span class="location name">com.broadridge.step_defs.Hooks.horizontalLineStart()</span>
 
@@ -1007,22 +998,6 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
   </div>
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-22">
-          <a>org.junit.ComparisonFailure:</a>
-      </div>
-      <div id="msg-22" class="collapse collapsable-details ">
-        <pre>org.junit.ComparisonFailure: expected:&lt;https://[]www-dev.broadridge.c...&gt; but was:&lt;https://[broadridgedigital:broadridge1@]www-dev.broadridge.c...&gt;
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at com.broadridge.step_defs.HeaderContactFromStepDefs.userValidatesTheHeaderContactUsForm(HeaderContactFromStepDefs.java:98)
-	at &#10045;.User validates the header contact us form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/headerContactForm.feature:8)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -1060,7 +1035,7 @@ Session ID: 9b469e24be0d0464c71e4f1deeca9608
             <span class="keyword indention">After</span>
               <span class="location name">com.broadridge.step_defs.Hooks.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.178</span>
+  <span class="lead-duration duration">0.196</span>
 
           </div>
 

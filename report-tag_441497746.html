@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>21 Sep 2025, 21:37</td>
+      <td>21 Sep 2025, 21:58</td>
     </tr>
   </tbody>
 </table>
@@ -127,9 +127,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@headerContact</td>
-          <td      class="passed"    >2</td>
+          <td      class="passed"    >1</td>
           <td      class="failed"    >1</td>
-          <td >0</td>
+          <td     class="skipped"   >1</td>
           <td >0</td>
           <td >0</td>
           <td class="total">3</td>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="19331300485">19.331</td>
+          <td class="duration" data-value="18668315195">18.668</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -182,7 +182,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">19.331</span>
+  <span class="lead-duration duration">18.668</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -225,7 +225,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User navigates header contact us form</span>
 
-  <span class="lead-duration duration">6.777</span>
+  <span class="lead-duration duration">6.008</span>
 
 </div>
 
@@ -280,11 +280,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
   <span class="name">User fills the header contact us form</span>
 
-  <span class="lead-duration duration">12.548</span>
+  <span class="lead-duration duration">12.660</span>
 
 </div>
 
@@ -325,6 +325,21 @@ $(document).ready(function() {
 
 
 
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-5">
+          <a>java.lang.AssertionError:</a>
+      </div>
+      <div id="msg-5" class="collapse collapsable-details ">
+        <pre>java.lang.AssertionError: Form Submission Message = Something went wrong with our form submission. Please try again.
+	at org.junit.Assert.fail(Assert.java:89)
+	at com.broadridge.step_defs.HeaderContactFromStepDefs.userFillsTheHeaderContactUsForm(HeaderContactFromStepDefs.java:80)
+	at &#10045;.User fills the header contact us form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/headerContactForm.feature:7)
+</pre>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -339,20 +354,20 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">User validates the header contact us form</span>
 
-  <span class="lead-duration duration">0.005</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
 
 
   <div class="inner-level hooks-step-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-5">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-6">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -362,9 +377,9 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-5" class="inner-level collapse collapsable-details ">
+    <div id="before-6" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief skipped">
             <span class="keyword indention">Before</span>
               <span class="location name">com.broadridge.step_defs.Hooks.horizontalLineStart()</span>
 
@@ -383,22 +398,6 @@ $(document).ready(function() {
   </div>
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-6">
-          <a>org.junit.ComparisonFailure:</a>
-      </div>
-      <div id="msg-6" class="collapse collapsable-details ">
-        <pre>org.junit.ComparisonFailure: expected:&lt;https://[]www-dev.broadridge.c...&gt; but was:&lt;https://[broadridgedigital:broadridge1@]www-dev.broadridge.c...&gt;
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at com.broadridge.step_defs.HeaderContactFromStepDefs.userValidatesTheHeaderContactUsForm(HeaderContactFromStepDefs.java:98)
-	at &#10045;.User validates the header contact us form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/headerContactForm.feature:8)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -436,7 +435,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
               <span class="location name">com.broadridge.step_defs.Hooks.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.178</span>
+  <span class="lead-duration duration">0.196</span>
 
           </div>
 
