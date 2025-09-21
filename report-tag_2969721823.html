@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 
 
-<title>Cucumber Reports  - Tag: @download</title>
+<title>Cucumber Reports  - Tag: @contact</title>
 
 </head>
 <body>
@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>21 Sep 2025, 21:32</td>
+      <td>21 Sep 2025, 21:37</td>
     </tr>
   </tbody>
 </table>
@@ -126,10 +126,10 @@ $(document).ready(function() {
 
         <tbody>
         <tr>
-          <td class="tagname">@download</td>
-          <td      class="passed"    >2</td>
+          <td class="tagname">@contact</td>
+          <td      class="passed"    >1</td>
           <td      class="failed"    >1</td>
-          <td >0</td>
+          <td     class="skipped"   >1</td>
           <td >0</td>
           <td >0</td>
           <td class="total">3</td>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="25048418401">25.048</td>
+          <td class="duration" data-value="15911707788">15.911</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -171,25 +171,25 @@ $(document).ready(function() {
 <div class="element">
     <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_1_165888167.html">Download form validation</a>
+      <a href="report-feature_3330925617.html">Contact Us form validation</a>
     </div>
 
 
 <div class="tags indention">
     <b>Tags:</b>
        <a href="report-tag_4089311534.html">@smoke</a>
-       <a href="report-tag_3862333639.html">@download</a>
+       <a href="report-tag_2969721823.html">@contact</a>
 </div>
 
 
-  <span class="lead-duration duration">25.048</span>
+  <span class="lead-duration duration">15.911</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">User fills the download form and validates the form on BE</span>
+  <span class="name">User fills the contact us form and validates the form on BE</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -223,9 +223,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
-  <span class="name">User navigates to download form page</span>
+  <span class="name">User navigates to contact us form page</span>
 
-  <span class="lead-duration duration">6.130</span>
+  <span class="lead-duration duration">13.597</span>
 
 </div>
 
@@ -250,7 +250,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.broadridge.step_defs.Hooks.horizontalLineStart()</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.002</span>
 
           </div>
 
@@ -280,11 +280,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
-  <span class="name">User fills the download form</span>
+  <span class="name">User fills the contact us form</span>
 
-  <span class="lead-duration duration">18.816</span>
+  <span class="lead-duration duration">2.313</span>
 
 </div>
 
@@ -325,6 +325,44 @@ $(document).ready(function() {
 
 
 
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-5">
+          <a>org.openqa.selenium.ElementClickInterceptedException:</a>
+      </div>
+      <div id="msg-5" class="collapse collapsable-details ">
+        <pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (876, 976)
+  (Session info: chrome=140.0.7339.80)
+Build info: version: '4.32.0', revision: 'd17c8aa950'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '20.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9b469e24be0d0464c71e4f1deeca9608, clickElement {id=f.0DF27055085F3AED86C60617C9AB371B.d.849966FE7E558F58B900AEB5CFDB02ED.e.80}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37393}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37393/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (9b469e24be0d0464c71e4f1deeca9608)] -&gt; xpath: //button[@aria-labelledby='country-combobox-value-1']]
+Session ID: 9b469e24be0d0464c71e4f1deeca9608
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.click(Unknown Source)
+	at com.broadridge.step_defs.contactUsSteps.ContactUsStepDef.userFillsTheContactUsForm(ContactUsStepDef.java:89)
+	at &#10045;.User fills the contact us form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/contactUs.feature:7)
+</pre>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -339,20 +377,20 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">User validates the download form</span>
+  <span class="name">User validates the contact us form</span>
 
-  <span class="lead-duration duration">0.102</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
 
 
   <div class="inner-level hooks-step-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-5">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-6">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -362,9 +400,9 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-5" class="inner-level collapse collapsable-details ">
+    <div id="before-6" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief skipped">
             <span class="keyword indention">Before</span>
               <span class="location name">com.broadridge.step_defs.Hooks.horizontalLineStart()</span>
 
@@ -383,22 +421,6 @@ $(document).ready(function() {
   </div>
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-6">
-          <a>org.junit.ComparisonFailure:</a>
-      </div>
-      <div id="msg-6" class="collapse collapsable-details ">
-        <pre>org.junit.ComparisonFailure: expected:&lt;https://[]www-dev.broadridge.c...&gt; but was:&lt;https://[broadridgedigital:broadridge1@]www-dev.broadridge.c...&gt;
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at com.broadridge.step_defs.downloadFormSteps.DownloadFormStepDef.userValidatesTheDownloadForm(DownloadFormStepDef.java:120)
-	at &#10045;.User validates the download form(file:///home/runner/work/broadridgeTestAutomation/broadridgeTestAutomation/src/test/resources/features/downloadForm.feature:8)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -436,7 +458,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
               <span class="location name">com.broadridge.step_defs.Hooks.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.137</span>
+  <span class="lead-duration duration">0.168</span>
 
           </div>
 
@@ -448,14 +470,14 @@ $(document).ready(function() {
   <div class="embeddings inner-level">
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-8" class="collapsable-control">
-      <a>User fills the download form and validates the form on BE</a>
-      <a href="embeddings/embedding_-751533723.png" download target="_blank">
+      <a>User fills the contact us form and validates the form on BE</a>
+      <a href="embeddings/embedding_-1132894838.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-8" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-751533723.png">
+        <img src="embeddings/embedding_-1132894838.png">
       </div>
     </div>
   </div>
