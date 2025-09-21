@@ -7,7 +7,7 @@ on:
   workflow_dispatch: #allows manuel triggering  
 
 permissions:
-  contents: write   # 👈 required for gh-pages deployment  
+  contents: write   # 
 
 jobs:
   test:
@@ -36,7 +36,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/cucumber
+          publish_dir: ./target/cucumber/cucumber-html-reports
 
       #5. collecting the failures
       - name: Collect failures
@@ -67,7 +67,7 @@ jobs:
           body: |
             <h2>Some tests have failed</h2>
             <p>  ${{ steps.failures.outputs.report }}   </p>
-            <p>📑 <a href="https://huseyinturksoy.github.io/broadridgeTestAutomation/">View Full Report</a></p>
+            <p>📑 <a href="https://huseyinturksoy.github.io/broadridgeTestAutomation/report-tag_4089311534">View Full Report</a></p>
                 
 
          
