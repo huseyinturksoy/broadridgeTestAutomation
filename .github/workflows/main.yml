@@ -36,7 +36,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .target/cucumber/cucumber-html-reports/report-tag_4089311534.html
+          publish_dir: .target/cucumber/cucumber-html-reports
 
       #5. collecting the failures
       - name: Collect failures
