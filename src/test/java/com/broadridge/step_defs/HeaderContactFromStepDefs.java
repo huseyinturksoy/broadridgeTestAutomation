@@ -66,10 +66,10 @@ public class HeaderContactFromStepDefs {
         headerContact.headerPhone.sendKeys("999-999-9999");
         headerContact.headerJobTitle.sendKeys("Job_TESTTEST");
         headerContact.headerCompanyName.sendKeys("Company_TESTTEST");
-        headerContact.headerCountrySelectorButton.click();
-        headerContact.headerUnitedStatesOption.click();
+        BrowserUtils.click(headerContact.headerCountrySelectorButton);  //headerContact.headerCountrySelectorButton.click();
+        BrowserUtils.click(headerContact.headerUnitedStatesOption); //headerContact.headerUnitedStatesOption.click();
         headerContact.headerMessage.sendKeys("This is an automated test submission.  Please ignore.");
-        headerContact.headerSubmitButton.click();
+        BrowserUtils.click(headerContact.headerSubmitButton); //headerContact.headerSubmitButton.click();
 
         System.out.println("---------------Header Contact Us form submit button clicked --------------");
 
@@ -77,6 +77,7 @@ public class HeaderContactFromStepDefs {
             System.out.println("Form Submission Message = " + headerContact.thankyouMessage.getText());
         } catch (Exception e) {
             System.out.println("Form Submission Message = " + headerContact.errorMessage.getText());
+            Assert.fail("Form Submission Message = " + headerContact.errorMessage.getText());
         }
 
 

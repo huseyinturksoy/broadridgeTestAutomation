@@ -86,10 +86,10 @@ public class ContactUsStepDef {
         contactPage.phone.sendKeys("999-999-9999");
         contactPage.jobTitle.sendKeys("Job_TESTTEST");
         contactPage.companyName.sendKeys("Company_TESTTEST");
-        contactPage.countrySelectorButton.click();
-        contactPage.unitedStatesOption.click();
+        BrowserUtils.click(contactPage.countrySelectorButton); //contactPage.countrySelectorButton.click();
+        BrowserUtils.click(contactPage.unitedStatesOption); //contactPage.unitedStatesOption.click();
         contactPage.message.sendKeys("This is an automated test submission.  Please ignore.");
-        contactPage.submitButton.click();
+        BrowserUtils.click(contactPage.submitButton);  //contactPage.submitButton.click();
 
         System.out.println("---------------Contact us button clicked --------------");
 
@@ -97,6 +97,7 @@ public class ContactUsStepDef {
             System.out.println("Form Submission Message = " + contactPage.thankyouMessage.getText());
         } catch (Exception e) {
             System.out.println("Form Submission Message = " + contactPage.errorMessage.getText());
+            Assert.fail("Form Submission Message = " + contactPage.errorMessage.getText());
         }
 
     }
