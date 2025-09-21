@@ -99,7 +99,7 @@ public class DownloadFormStepDef {
             System.out.println("Form Submission Message = " + downloadFormPage.thankyouMessage.getText());
         } catch (Exception e) {
             System.out.println("Form Submission Message = " + downloadFormPage.errorMessage.getText());
-            Assert.fail("Form Submission Message = " + downloadFormPage.errorMessage.getText());
+            throw new RuntimeException(e);
 
         }
 

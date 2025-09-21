@@ -77,7 +77,7 @@ public class HeaderContactFromStepDefs {
             System.out.println("Form Submission Message = " + headerContact.thankyouMessage.getText());
         } catch (Exception e) {
             System.out.println("Form Submission Message = " + headerContact.errorMessage.getText());
-            Assert.fail("Form Submission Message = " + headerContact.errorMessage.getText());
+            throw new RuntimeException(e);
         }
 
 

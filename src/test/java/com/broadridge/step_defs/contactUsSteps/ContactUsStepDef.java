@@ -97,7 +97,7 @@ public class ContactUsStepDef {
             System.out.println("Form Submission Message = " + contactPage.thankyouMessage.getText());
         } catch (Exception e) {
             System.out.println("Form Submission Message = " + contactPage.errorMessage.getText());
-            Assert.fail("Form Submission Message = " + contactPage.errorMessage.getText());
+            throw new RuntimeException(e);
         }
 
     }
