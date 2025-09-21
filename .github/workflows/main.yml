@@ -61,12 +61,12 @@ jobs:
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
           subject: "🚨 Test Failure in Broadridge Forms"
-          to: huseyin.turksoy@nmqdigital.com # ${{ secrets.CLIENT_EMAILS }}
+          to: huseyin.turksoy@nmqdigital.com # ${{ secrets.CLIENT_EMAILS }}     ${{ steps.failures.outputs.report }}
           from: ${{ secrets.SMTP_USERNAME }}
           content_type: text/html
           body: |
             <h2>Some tests have failed</h2>
-            <p>  ${{ steps.failures.outputs.report }}   </p>
+            <p>   Automation test has some failures, please check the report. You can reach the report by clicking the link below  </p>
             <p>📑 <a href="https://huseyinturksoy.github.io/broadridgeTestAutomation/report-tag_4089311534">View Full Report</a></p>
                 
 
