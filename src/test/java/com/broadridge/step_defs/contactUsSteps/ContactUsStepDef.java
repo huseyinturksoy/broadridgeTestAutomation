@@ -80,34 +80,16 @@ public class ContactUsStepDef {
 
     @When("User fills the contact us form")
     public void userFillsTheContactUsForm() {
-        String firstName = GenerateUtils.generateShortName();
-        System.out.println("firstName = " + firstName);
-        String lastName = GenerateUtils.generateLastName();
-        System.out.println("lastName = " + lastName);
-        String email = GenerateUtils.generateEmail();
-        System.out.println("email = " + email);
-        String phone = GenerateUtils.generatePhoneNumber();
-        System.out.println("phone = " + phone);
-        String jobTitle = GenerateUtils.generateJobTitle();
-        System.out.println("jobTitle = " + jobTitle);
-        String companyName = GenerateUtils.generateCompanyName();
-        System.out.println("companyName = " + companyName);
-        String message = GenerateUtils.generateMessage();
-        System.out.println("message = " + message);
-
-        contactPage.firstName.sendKeys(firstName);
-        contactPage.lastName.sendKeys(lastName);
-        contactPage.email.sendKeys(email);
-        contactPage.phone.sendKeys(phone);
-        contactPage.jobTitle.sendKeys(jobTitle);
-        contactPage.companyName.sendKeys(companyName);
-        //contactPage.countrySelectorButton.click();
-        BrowserUtils.click(contactPage.countrySelectorButton);
-        //contactPage.unitedStatesOption.click();
-        BrowserUtils.click(contactPage.unitedStatesOption);
-        contactPage.message.sendKeys(message);
-        //contactPage.submitButton.click();
-        BrowserUtils.click(contactPage.submitButton);
+        contactPage.firstName.sendKeys("First_TESTTEST");
+        contactPage.lastName.sendKeys("Last_TESTTEST");
+        contactPage.email.sendKeys("automated_TESTTEST@broadridge.com");
+        contactPage.phone.sendKeys("999-999-9999");
+        contactPage.jobTitle.sendKeys("Job_TESTTEST");
+        contactPage.companyName.sendKeys("Company_TESTTEST");
+        contactPage.countrySelectorButton.click();
+        contactPage.unitedStatesOption.click();
+        contactPage.message.sendKeys("This is an automated test submission.  Please ignore.");
+        contactPage.submitButton.click();
 
         System.out.println("---------------Contact us button clicked --------------");
 
