@@ -61,7 +61,7 @@ jobs:
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
           subject: "🚨 Test Failure in Broadridge Forms"
-          to: huseyin.turksoy@nmqdigital.com #;kadir.ozsar@nmqdigital.com # ${{ secrets.CLIENT_EMAILS }}     
+          to: huseyin.turksoy@nmqdigital.com;kadir.ozsar@nmqdigital.com # ${{ secrets.CLIENT_EMAILS }}     
           from: ${{ secrets.SMTP_USERNAME }}
           content_type: text/html
           body:  |
